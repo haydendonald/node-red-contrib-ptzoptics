@@ -1,0 +1,29 @@
+{
+  "name": "node-red-contrib-ptzoptics",
+  "version": "0.0.1",
+  "description": "PTZ Camera Control For Node Red",
+  "main": "ptz.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:haydendonald/node-red-contrib-ptzoptics.git"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "node-red",
+    "ptz",
+    "optics",
+    "camera",
+	"PT20X"
+  ],
+  "node-red": {
+    "nodes": {
+      "Network": "network.js",
+      "Ptz": "ptz.js"
+    }
+  },
+  "author": "Hayden Donald",
+  "bugs": {
+    "url": "https://github.com/haydendonald/node-red-contrib-ptzoptics/issues"
+  },
+  "homepage": "https://github.com/estbeetoo/node-red-contrib-ptzoptics#readme"
+}
