@@ -1,48 +1,44 @@
-# node-red-contrib-kramer
-Kramer Control for Node Red  
-Tested Using the VP-774A
+# node-red-contrib-ptzoptics
+TCP Control for PTZ Optics cameras via Node Red
+Tested Using the PT20X
 
-# In Development Not Ready For Use!
+# In the testing phase, might have bugs, use at your own risk.
 
-
-# Required MSG Object (Will also be the same on the output unless msg.topic is response in which case the msg.payload will be the response)
-#### msg.payload.type*
-The type of command to be set, can either be "set" or "get"
-#### msg.payload.func*
-The function to be processed, look below at the supported functions, can also be sent the raw command ID found in the offical documentation
-#### msg.payload.param*
-The parameters for the function, look below for the supported parameters, can also be sent the raw command ID found in the offical documentation
+# Required MSG Object
+#### msg.payload.mode*
+The mode to be sent to the camera, look below for supported modes
+#### msg.payload.action*
+The action to be sent to the camera under the mode
+#### msg.payload.value*
+If the command requires a value these will be passed here as an array of hex. Example: msg.payload.value = [0x01] will select preset 1 if passed to the memory recall function
 (* = required)
 # List of Supported Commands
-## msg.payload.func = "display mode"
-* msg.payload.param = "single window"
-* msg.payload.param = "picture In picture"
-* msg.payload.param = "picture + picture"
-* msg.payload.param = "split"
-* msg.payload.param = "customized"
-## msg.payload.func = "input source"
-* msg.payload.param = "hdmi1"
-* msg.payload.param = "hdmi2"
-* msg.payload.param = "hdmi3"
-* msg.payload.param = "hdmi4"
-* msg.payload.param = "pc1"
-* msg.payload.param = "pc2"
-* msg.payload.param = "vc"
-* msg.payload.param = "dp"
-* msg.payload.param = "sdi"
-## msg.payload.func = "input volume"
-msg.payload.param = volume level (-20 -> 4) [dB]
-## msg.payload.func = "output volume"
-msg.payload.param = volume level (-80 -> 20) [dB]
-## msg.payload.func = "mic1 volume"
-msg.payload.param = volume level (-100 -> 12) [dB]
-## msg.payload.func = "mic2 volume"
-msg.payload.param = volume level (-100 -> 12) [dB]
-## msg.payload.func = "mic1 mix"
-msg.payload.param = volume level (-100 -> 1) [dB]
-## msg.payload.func = "mix2 mix"
-msg.payload.param = volume level (-100 -> 1) [dB]
-## msg.payload.func = "line mix"
-msg.payload.param = volume level (-100 -> 0) [dB]
+## msg.payload.mode = "zoom"
+* msg.payload.action = "stop"
+* msg.payload.action = "teleStandard"
+* msg.payload.action = "wideStandard"
+* msg.payload.action = "teleVariable"
+* msg.payload.action = "wideVariable"
+* msg.payload.action = "direct"*
+## msg.payload.mode = "focus"
+* msg.payload.action = "stop"
+* msg.payload.action = "farStandard"
+* msg.payload.action = "nearStandard"
+* msg.payload.action = "farVariable"
+* msg.payload.action = "nearVariable"
+* msg.payload.action = "autoFocus"
+* msg.payload.action = "manualFocus"
+* msg.payload.action = "autoManual"
+* msg.payload.action = "direct"*
+## msg.payload.mode = "panTilt"
+* msg.payload.action = "stop"*
+* msg.payload.action = "absolutePosition"*
+* msg.payload.action = "relativePosition"*
+* msg.payload.action = "home"
+## msg.payload.mode = "memory"
+* msg.payload.action = "reset"*
+* msg.payload.action = "set"*
+* msg.payload.action = "recall"*
+(* = requires a msg.payload.value to be passed. Look at the offical documentation)
 
-[More Commands Avaliable in The Documentation on Page 104 ->](https://k.kramerav.com/downloads/manuals/vp-774a_rev_2.pdf#page=112 "Documentation")
+[More Commands Avaliable in The Documentation->](https://ptzoptics.com/wp-content/uploads/2014/09/PTZOptics_TCP_UDP_CGI_Control-1.pdf" "Documentation")
