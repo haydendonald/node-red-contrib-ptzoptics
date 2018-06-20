@@ -33,4 +33,64 @@
 
 <!-- Information Panel -->
 <script type="text/x-red" data-help-name="ptz-ptz">
+    <h1>node-red-contrib-ptzoptics</h1>
+    TCP Control for PTZ Optics cameras via Node Red</br>
+    Tested Using the PT20X
+    <h1>In the testing phase, might have bugs, use at your own risk.</h1>
+    
+    <h1>Required MSG Object</h1>
+    <h4>msg.payload.mode*</h4>
+    The mode to be sent to the camera, look below for supported modes
+    <h4>msg.payload.action*</h4>
+    The action to be sent to the camera under the mode
+    <h4>msg.payload.value*</h4>
+    If the command requires a value these will be passed here as an array of hex. 
+    </br>Example: msg.payload.value = [0x01] will select preset 1 if passed to the memory recall function
+    </br>(* = required)
+    <h1>List of Supported Commands</h1>
+    <h2>msg.payload.mode = "zoom"</h2>
+    <ul>
+        <li>msg.payload.action = "stop"</li>
+        <li>msg.payload.action = "teleStandard"</li>
+        <li>msg.payload.action = "wideStandard"</li>
+        <li>msg.payload.action = "teleVariable"</li>
+        <li>msg.payload.action = "wideVariable"</li>
+        <li>msg.payload.action = "direct"*</li>
+    </ul>
+    <h2>msg.payload.mode = "focus"</h2>
+    <ul>
+        <li>msg.payload.action = "stop"</li>
+        <li>msg.payload.action = "farStandard"</li>
+        <li>msg.payload.action = "nearStandard"</li>
+        <li>msg.payload.action = "farVariable"</li>
+        <li>msg.payload.action = "nearVariable"</li>
+        <li>msg.payload.action = "autoFocus"</li>
+        <li>msg.payload.action = "manualFocus"</li>
+        <li>msg.payload.action = "autoManual"</li>
+        <li>msg.payload.action = "direct"*</li>
+    </ul>
+    <h2>msg.payload.mode = "panTilt"</h2>
+    <ul>
+        <li>msg.payload.action = "up"*</li>
+        <li>msg.payload.action = "down"*</li>
+        <li>msg.payload.action = "left"*</li>
+        <li>msg.payload.action = "right"*</li>
+        <li>msg.payload.action = "upLeft"*</li>
+        <li>msg.payload.action = "upRight"*</li>
+        <li>msg.payload.action = "downLeft"*</li>
+        <li>msg.payload.action = "downRight"*</li>
+        <li>msg.payload.action = "stop"*</li>
+        <li>msg.payload.action = "absolutePosition"*</li>
+        <li>msg.payload.action = "relativePosition"*</li>
+        <li>msg.payload.action = "home"</li>
+    </ul>
+    <h2>msg.payload.mode = "memory"</h2>
+    <ul>
+        <li>msg.payload.action = "reset"*</li>
+        <li>msg.payload.action = "set"*</li>
+        <li>msg.payload.action = "recall"*</li>
+    </ul>
+    (* = requires a msg.payload.value to be passed. Look at the offical documentation)
+    </br>
+    <a href="https://ptzoptics.com/wp-content/uploads/2014/09/PTZOptics_TCP_UDP_CGI_Control-1.pdf"><p>More Commands and Value agruments Avaliable in The Documentation</p></a>
 </script>

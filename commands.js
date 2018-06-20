@@ -35,6 +35,14 @@ var modes = {
     "panTilt": {
         "byte": [0x06],
         "subModes": {
+            "up": [[0x01], [0x03, 0x01], true],
+            "down": [[0x01], [0x03, 0x02], true],
+            "left": [[0x01], [0x01, 0x03], true],
+            "right": [[0x01], [0x02, 0x03], true],
+            "upLeft": [[0x01], [0x01, 0x01], true],
+            "upRight": [[0x01], [0x02, 0x01], true],
+            "downLeft": [[0x01], [0x01, 0x02], true],
+            "downRight": [[0x01], [0x02, 0x02], true],
             "stop": [[0x01], [0x03, 0x03], true],
             "absolutePosition": [[0x02], [], true],
             "relativePosition": [[0x03], [], true],

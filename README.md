@@ -31,6 +31,14 @@ If the command requires a value these will be passed here as an array of hex. Ex
 * msg.payload.action = "autoManual"
 * msg.payload.action = "direct"*
 ## msg.payload.mode = "panTilt"
+* msg.payload.action = "up"*
+* msg.payload.action = "down"*
+* msg.payload.action = "left"*
+* msg.payload.action = "right"*
+* msg.payload.action = "upLeft"*
+* msg.payload.action = "upRight"*
+* msg.payload.action = "downLeft"*
+* msg.payload.action = "downRight"*
 * msg.payload.action = "stop"*
 * msg.payload.action = "absolutePosition"*
 * msg.payload.action = "relativePosition"*
