@@ -41,4 +41,4 @@ If the command requires a value these will be passed here as an array of hex. Ex
 * msg.payload.action = "recall"*
 (* = requires a msg.payload.value to be passed. Look at the offical documentation)
 
-[More Commands Avaliable in The Documentation->](https://ptzoptics.com/wp-content/uploads/2014/09/PTZOptics_TCP_UDP_CGI_Control-1.pdf" "Documentation")
+[More Commands Avaliable in The Documentation->](https://ptzoptics.com/wp-content/uploads/2014/09/PTZOptics_TCP_UDP_CGI_Control-1.pdf "Documentation")
