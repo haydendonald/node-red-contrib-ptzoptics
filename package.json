@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-ptzoptics",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "PTZ Camera Control For Node Red",
   "main": "ptz.js",
   "repository": {
@@ -13,7 +13,7 @@
     "ptz",
     "optics",
     "camera",
-	"PT20X"
+    "PT20X"
   ],
   "node-red": {
     "nodes": {

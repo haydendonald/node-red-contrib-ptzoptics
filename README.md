@@ -2,8 +2,6 @@
 TCP Control for PTZ Optics cameras via Node Red
 Tested Using the PT20X
 
-# In the testing phase, might have bugs, use at your own risk.
-
 # Required MSG Object
 #### msg.payload.mode*
 The mode to be sent to the camera, look below for supported modes
@@ -48,5 +46,18 @@ If the command requires a value these will be passed here as an array of hex. Ex
 * msg.payload.action = "set"*
 * msg.payload.action = "recall"*
 (* = requires a msg.payload.value to be passed. Look at the offical documentation)
+
+# Example
+This will recall memory 1
+```
+return {
+    "payload": {
+        "mode": "memory",
+        "action": "recall",
+        "value": new Buffer([0])
+    }
+}
+```
+
 
 [More Commands Avaliable in The Documentation->](https://ptzoptics.com/wp-content/uploads/2014/09/PTZOptics_TCP_UDP_CGI_Control-1.pdf "Documentation")

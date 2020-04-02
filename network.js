@@ -1,4 +1,3 @@
-var commands = require("./commands.js");
 module.exports = function(RED)
 {
 
@@ -9,9 +8,10 @@ module.exports = function(RED)
         this.ipAddress = config.ipAddress;
         this.port = config.port;
         this.deviceId = config.deviceId;
-        this.server = require("./tcp.js");
+        this.server = require("./tcp.js").object();
         this.nodes = [];
         var network = this;
+        var commands = require("./commands.js");
         this.link = function link(node) {
             this.nodes.push(node);
         }
