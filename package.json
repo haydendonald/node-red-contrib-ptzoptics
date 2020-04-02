@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-ptzoptics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PTZ Camera Control For Node Red",
   "main": "ptz.js",
   "repository": {
@@ -25,5 +25,5 @@
   "bugs": {
     "url": "https://github.com/haydendonald/node-red-contrib-ptzoptics/issues"
   },
-  "homepage": "https://github.com/estbeetoo/node-red-contrib-ptzoptics#readme"
+  "homepage": "https://github.com/haydendonald/node-red-contrib-ptzoptics#readme"
 }
